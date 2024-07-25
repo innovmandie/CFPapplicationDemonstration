@@ -1,0 +1,676 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Data A page{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+  <br>
+  <!-- Button to trigger modal -->
+  <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModal" style="margin-left: 90%;">
+    Information
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Information</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Vous devez remplir toutes les questions relatives aux pôles pour pouvoir exporter les résultats en pdf
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+    <br>
+    <figure class="text-center">
+        <h4>Cartographie auto-positionnement</h4>
+        </figure>
+
+
+    <div class="row" style="margin:20px">
+  <div class="col-sm-6">
+        <div class="card text-center">
+        <div class="card-header"><h5 class="card-title">Réponses aux questions pôle A</h5></div>
+      <div class="card-body">
+        <p class="card-text">Parcours de A1 à A3</p>
+        <div class="table-responsive">
+       <table class="table table-bordered table-hover">
+  <thead class="table-primary">
+    <tr>
+      <th scope="col" style="text-align:center;">A1C1</th>
+      <th scope="col" style="text-align:center;">A1C2</th>
+      <th scope="col" style="text-align:center;">A1C3</th>
+      <th scope="col" style="text-align:center;">A2C1</th>
+      <th scope="col" style="text-align:center;">A2C2</th>
+      <th scope="col" style="text-align:center;">A2C3</th>
+      <th scope="col" style="text-align:center;">A3C1</th>
+      <th scope="col" style="text-align:center;">A3C2</th>
+      <th scope="col" style="text-align:center;">A3C3</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    {% if A1_C1 %}
+    <td style="text-align:center;"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="green" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+</svg>
+      {% else %}</td>
+      <td style="text-align:center;"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="red" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+</svg>
+      {% endif %}</td>
+
+      {% if A1_C2 %}
+      <td style="text-align:center;"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="green" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+</svg>
+      {% else %}</td>
+      <td style="text-align:center;"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="red" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+</svg>
+      {% endif %}</td>
+
+      {% if A1_C3 %}
+      <td style="text-align:center;"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="green" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+</svg>
+      {% else %}</td>
+      <td style="text-align:center;"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="red" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+</svg>
+      {% endif %}</td>
+
+      {% if A2_C1 %}
+      <td style="text-align:center;"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="green" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+</svg>
+      {% else %}</td>
+      <td style="text-align:center;"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="red" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+</svg>
+        {% endif %}</td>
+        {% if A2_C2 %}
+        <td style="text-align:center;"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="green" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+</svg>
+            {% else %}</td>
+            <td style="text-align:center;"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="red" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+</svg>
+            {% endif %}</td>
+            {% if A2_C3 %}
+            <td style="text-align:center;"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="green" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+</svg>
+                {% else %}</td>
+                <td style="text-align:center;"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="red" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+</svg>
+                {% endif %}</td>
+        {% if A3_C1 %}
+        <td style="text-align:center;"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="green" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+</svg>
+        {% else %}</td>
+        <td style="text-align:center;"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="red" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+</svg>
+        {% endif %}</td>
+        {% if A3_C2 %}
+        <td style="text-align:center;"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="green" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+</svg>
+            {% else %}</td>
+            <td style="text-align:center;"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="red" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+</svg>
+            {% endif %}</td>
+            {% if A3_C3 %}
+            <td style="text-align:center;"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="green" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+</svg>
+                {% else %}</td>
+                <td style="text-align:center;"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="red" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+</svg>
+                {% endif %}</td>
+    </tr>
+
+  </tbody>
+</table>
+</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-6">
+    <div class="card text-center">
+        <div class="card-header"><h5 class="card-title">Réponses aux questions pôle A</h5></div>
+      <div class="card-body">
+        <p class="card-text">Parcours de A4 à A6</p>
+        <div class="table-responsive">
+        <table class="table table-bordered table-hover">
+  <thead class="table-primary">
+    <tr>
+      <th scope="col" style="text-align:center;">A4C1</th>
+      <th scope="col" style="text-align:center;">A4C2</th>
+      <th scope="col" style="text-align:center;">A4C3</th>
+      <th scope="col" style="text-align:center;">A5C1</th>
+      <th scope="col" style="text-align:center;">A5C2</th>
+      <th scope="col" style="text-align:center;">A5C3</th>
+      <th scope="col" style="text-align:center;">A6C1</th>
+      <th scope="col" style="text-align:center;">A6C2</th>
+      <th scope="col" style="text-align:center;">A6C3</th>
+    </tr>
+  </thead>
+
+  <tbody>
+
+    <tr>
+        {% if A4_C1 %}
+     <td style="text-align:center;"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="green" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+</svg>
+      {% else %}</td>
+      <td style="text-align:center;"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="red" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+</svg>
+      {% endif %}</td>
+
+      {% if A4_C2 %}
+     <td style="text-align:center;"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="green" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+</svg>
+      {% else %}</td>
+      <td style="text-align:center;"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="red" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+</svg>
+      {% endif %}</td>
+
+      {% if A4_C3 %}
+     <td style="text-align:center;"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="green" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+</svg>
+      {% else %}</td>
+      <td style="text-align:center;"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="red" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+</svg>
+      {% endif %}</td>
+
+      {% if A5_C1 %}
+      <td style="text-align:center;"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="green" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+</svg>
+        {% else %}</td>
+        <td style="text-align:center;"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="red" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+</svg>
+        {% endif %}</td>
+        {% if A5_C2 %}
+        <td style="text-align:center;"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="green" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+</svg>
+            {% else %}</td>
+            <td style="text-align:center;"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="red" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+</svg>
+            {% endif %}</td>
+            {% if A5_C3 %}
+            <td style="text-align:center;"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="green" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+</svg>
+                {% else %}</td>
+                <td style="text-align:center;"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="red" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+</svg>
+                {% endif %}</td>
+        {% if A6_C1 %}
+        <td style="text-align:center;"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="green" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+</svg>
+        {% else %}</td>
+        <td style="text-align:center;"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="red" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+</svg>
+        {% endif %}</td>
+        {% if A6_C2 %}
+        <td style="text-align:center;"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="green" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+</svg>
+            {% else %}</td>
+            <td style="text-align:center;"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="red" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+</svg>
+            {% endif %}</td>
+            {% if A6_C3 %}
+            <td style="text-align:center;"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="green" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+</svg>
+                {% else %}</td>
+                <td style="text-align:center;"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="red" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+</svg>
+                {% endif %}</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<br>
+<div class="row" style="margin:20px">
+  <div class="col-sm-6">
+        <div class="card text-center">
+        <div class="card-header"><h5 class="card-title">Réponses aux questions pôle B</h5></div>
+      <div class="card-body">
+        <p class="card-text">Parcours de B1 à B4</p>
+        <div class="table-responsive">
+ <table class="table table-bordered table-hover">
+  <thead class="table-warning">
+    <tr>
+      <th scope="col" style="text-align:center;">B1C1</th>
+      <th scope="col" style="text-align:center;">B1C2</th>
+      <th scope="col" style="text-align:center;">B1C3</th>
+      <th scope="col" style="text-align:center;">B2C1</th>
+      <th scope="col" style="text-align:center;">B2C2</th>
+      <th scope="col" style="text-align:center;">B2C3</th>
+      <th scope="col" style="text-align:center;">B3C1</th>
+      <th scope="col" style="text-align:center;">B3C2</th>
+      <th scope="col" style="text-align:center;">B3C3</th>
+      <th scope="col" style="text-align:center;">B4C1</th>
+      <th scope="col" style="text-align:center;">B4C2</th>
+      <th scope="col" style="text-align:center;">B4C3</th>
+
+    </tr>
+  </thead>
+
+  <tbody>
+
+    <tr>
+      {% if B1_C1 %}
+      <td style="text-align:center;"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="green" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+</svg>
+      {% else %}</td>
+      <td style="text-align:center;"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="red" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+</svg>
+      {% endif %}</td>
+      {% if B1_C2 %}
+      <td style="text-align:center;"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="green" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+</svg>
+      {% else %}</td>
+      <td style="text-align:center;"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="red" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+</svg>
+      {% endif %}</td>
+      {% if B1_C3 %}
+      <td style="text-align:center;"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="green" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+</svg>
+      {% else %}</td>
+      <td style="text-align:center;"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="red" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+</svg>
+      {% endif %}</td>
+      {% if B2_C1 %}
+      <td style="text-align:center;"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="green" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+</svg>
+      {% else %}</td>
+      <td style="text-align:center;"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="red" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+</svg>
+      {% endif %}</td>
+      {% if B2_C2 %}
+      <td style="text-align:center;"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="green" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+</svg>
+      {% else %}</td>
+      <td style="text-align:center;"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="red" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+</svg>
+      {% endif %}</td>
+      {% if B2_C3 %}
+      <td style="text-align:center;"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="green" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+</svg>
+      {% else %}</td>
+      <td style="text-align:center;"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="red" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+</svg>
+      {% endif %}</td>
+      {% if B3_C1 %}
+      <td style="text-align:center;"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="green" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+</svg>
+      {% else %}</td>
+      <td style="text-align:center;"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="red" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+</svg>
+      {% endif %}</td>
+      {% if B3_C2 %}
+      <td style="text-align:center;"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="green" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+</svg>
+      {% else %}</td>
+      <td style="text-align:center;"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="red" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+</svg>
+      {% endif %}</td>
+      {% if B3_C3 %}
+      <td style="text-align:center;"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="green" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+</svg>
+      {% else %}</td>
+      <td style="text-align:center;"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="red" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+</svg>
+      {% endif %}</td>
+      {% if B4_C1 %}
+      <td style="text-align:center;"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="green" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+</svg>
+      {% else %}
+      <td style="text-align:center;"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="red" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+</svg>
+      {% endif %}</td>
+      {% if B4_C2 %}
+      <td style="text-align:center;"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="green" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+</svg>
+      {% else %}
+      <td style="text-align:center;"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="red" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+</svg>
+      {% endif %}</td>
+      {% if B4_C3 %}
+      <td style="text-align:center;"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="green" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+</svg>
+      {% else %}
+      <td style="text-align:center;"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="red" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+</svg>
+      {% endif %}</td>
+    </tr>
+
+  </tbody>
+</table>
+    </div>
+    </div>
+    </div>
+</div>
+<br>
+  <div class="col-sm-6">
+        <div class="card text-center">
+        <div class="card-header"><h5 class="card-title">Réponses aux questions pôle C</h5></div>
+      <div class="card-body">
+        <p class="card-text">Parcours de C1 à C3</p>
+        <div class="table-responsive">
+<table class="table table-bordered table-hover">
+  <thead class="table-success">
+    <tr>
+      <th scope="col" style="text-align:center;">C1C1</th>
+      <th scope="col" style="text-align:center;">C1C2</th>
+      <th scope="col" style="text-align:center;">C1C3</th>
+      <th scope="col" style="text-align:center;">C2C1</th>
+      <th scope="col" style="text-align:center;">C2C2</th>
+      <th scope="col" style="text-align:center;">C2C3</th>
+      <th scope="col" style="text-align:center;">C3C1</th>
+      <th scope="col" style="text-align:center;">C3C2</th>
+      <th scope="col" style="text-align:center;">C3C3</th>
+      <th scope="col" style="text-align:center;">C4C1</th>
+      <th scope="col" style="text-align:center;">C4C2</th>
+      <th scope="col" style="text-align:center;">C4C3</th>
+
+    </tr>
+  </thead>
+
+  <tbody>
+    {% if C1_C1 %}
+    <tr>
+      <td style="text-align:center;"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="green" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+</svg>
+      {% else %}
+      <td style="text-align:center;"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="red" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+</svg>
+      {% endif %}</td>
+
+      {% if C1_C2 %}
+    <td style="text-align:center;"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="green" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+</svg>
+      {% else %}
+      <td style="text-align:center;"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="red" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+</svg>
+      {% endif %}</td>
+
+      {% if C1_C3 %}
+      <td style="text-align:center;"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="green" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+</svg>
+      {% else %}
+      <td style="text-align:center;"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="red" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+</svg>
+      {% endif %}</td>
+
+      {% if C2_C1 %}
+      <td style="text-align:center;"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="green" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+</svg>
+        {% else %}</td>
+        <td style="text-align:center;"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="red" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+</svg>
+        {% endif %}</td>
+        {% if C2_C2 %}
+        <td style="text-align:center;"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="green" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+</svg>
+            {% else %}</td>
+            <td style="text-align:center;"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="red" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+</svg>
+            {% endif %}</td>
+            {% if C2_C3 %}
+            <td style="text-align:center;"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="green" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+</svg>
+                {% else %}</td>
+                <td style="text-align:center;"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="red" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+</svg>
+                {% endif %}</td>
+        {% if C3_C1 %}
+        <td style="text-align:center;"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="green" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+</svg>
+        {% else %}</td>
+        <td style="text-align:center;"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="red" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+</svg>
+        {% endif %}</td>
+        {% if C3_C2 %}
+        <td style="text-align:center;"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="green" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+</svg>
+            {% else %}</td>
+            <td style="text-align:center;"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="red" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+</svg>
+            {% endif %}</td>
+            {% if C3_C3 %}
+            <td style="text-align:center;"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="green" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+</svg>
+                {% else %}</td>
+                <td style="text-align:center;"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="red" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+</svg>
+                {% endif %}</td>
+                    {% if C4_C1 %}
+                    <td style="text-align:center;"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="green" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+</svg>
+        {% else %}</td>
+        <td style="text-align:center;"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="red" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+</svg>
+        {% endif %}</td>
+        {% if C4_C2 %}
+        <td style="text-align:center;"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="green" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+</svg>
+            {% else %}</td>
+            <td style="text-align:center;"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="red" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+</svg>
+            {% endif %}</td>
+            {% if C4_C3 %}
+            <td style="text-align:center;"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="green" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+</svg>
+                {% else %}</td>
+                <td style="text-align:center;"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="red" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+</svg>
+                {% endif %}</td>
+    </tr>
+  </tbody>
+
+</table>
+    </div>
+        </div>
+        </div>
+        </div>
+        </div>
+<h6 style="margin:20px">Les résultats seront disponibles après avoir rempli la section...</h6>
+<br>
+<div class="row" style="margin:20px">
+  <div class="col-sm-6">
+        <div class="card text-center">
+        <div class="card-header"><h5 class="card-title">Diagrammes visuels de chaque section</h5></div>
+      <div class="card-body">
+        <div class="table-responsive">
+<table  class="table table-bordered">
+    <p>Pôle A (Conseiller / Développer)</p>
+        <thead class="table-primary">
+            <tr>
+                <th scope="col">A1</th>
+                <th scope="col">A2</th>
+                <th scope="col">A3</th>
+                <th scope="col">A4</th>
+                 <th scope="col">A5</th>
+                 <th scope="col">A6</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                    <td><button><h6><a href="{% url 'resultatsA1' %}" target="_blank">A1</a></h6></button></td>
+                    <td><button><h6><a href="{% url 'resultatsA2' %}" target="_blank">A2</a></h6></button></td>
+                    <td><button><h6><a href="{% url 'resultatsA3' %}" target="_blank">A3</a></h6></button></td>
+                    <td><button><h6><a href="{% url 'resultatsA4' %}">A4</a></h6></button></td>
+                    <td><button><h6><a href="{% url 'resultatsA5' %}" target="_blank">A5</a></h6></button></td>
+                    <td><button><h6><a href="{% url 'resultatsA6' %}" target="_blank">A6</a></h6></button></td>
+
+            </tr>
+
+            </tbody>
+            </table>
+            </div>
+            </div>
+</div>
+</div>
+<div class="col-sm-6">
+        <div class="card text-center">
+        <div class="card-header"><h5 class="card-title">Diagrammes visuels de chaque section</h5></div>
+      <div class="card-body">
+        <div class="table-responsive">
+<table  class="table table-bordered">
+    <p>Pôle B (Concevoir / Innover)</p>
+        <thead class="table-warning">
+            <tr>
+                <th scope="col">B1</th>
+                <th scope="col">B2</th>
+                <th scope="col">B3</th>
+                <th scope="col">B4</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                    <td><button><h6><a href="{% url 'resultatsB1' %}" target="_blank">B1</a></h6></button></td>
+                    <td><button><h6><a href="{% url 'resultatsB2' %}" target="_blank">B2</a></h6></button></td>
+                    <td><button><h6><a href="{% url 'resultatsB3' %}" target="_blank">B3</a></h6></button></td>
+                    <td><button><h6><a href="{% url 'resultatsB4' %}">B4</a></h6></button></td>
+
+            </tr>
+            </tbody>
+            </table>
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
+            <div class="row" style="margin:20px">
+  <div class="col-sm-6">
+        <div class="card text-center">
+        <div class="card-header"><h5 class="card-title">Diagrammes visuels de chaque section</h5></div>
+      <div class="card-body">
+        <div class="table-responsive">
+
+<table  class="table table-bordered">
+    <p>parcours C (Piloter / Animer)</p>
+        <thead class="table-success">
+            <tr>
+                <th scope="col">C1</th>
+                <th scope="col">C2</th>
+                <th scope="col">C3</th>
+                <th scope="col">C4</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                    <td><button><h6><a href="{% url 'resultatsC1' %}" target="_blank">C1</a></h6></button></td>
+                    <td><button><h6><a href="{% url 'resultatsC2' %}" target="_blank">C2</a></h6></button></td>
+                    <td><button><h6><a href="{% url 'resultatsC3' %}" target="_blank">C3</a></h6></button></td>
+                    <td><button><h6><a href="{% url 'resultatsC4' %}">C4</a></h6></button></td>
+
+            </tr>
+            </tbody>
+            </table>
+        <br>
+     </div>
+     </div>
+     </div>
+     </div>
+     </div>
+     <br>
+     <div class='row' style="margin:20px">
+         <div class='col'>
+             <h6>Pour générer un PDF de tous les résultats toutes les sections doivent avoir été renseignées</h6>
+              <div class='col'> <div style="margin-left:10px;"><button type="submit" class="fr-btn"><h6><a href="{% url 'generate_All_pdf' %}" target="_blank" style="color:white">Créer un PDF de tous les résultats</a></h6></button></div></div>
+         </div>
+     </div>
+
+
+
+{% endblock %}

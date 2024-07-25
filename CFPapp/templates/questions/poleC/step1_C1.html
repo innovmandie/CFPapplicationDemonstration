@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% block title %}Question C1 C1{% endblock %}
+
+{% block content %}
+
+<div class="container-fluid">
+    <br>
+  <h4 class='text-center'style="font-weight: bold;">Pôle C : PILOTER – ANIMER</h4>
+      <dl class="dl-horizontal">
+                <dt><h6 class= 'text-center'>C1 : Management de projets</h6></dt>
+            <div class="container" style="margin-left:10%">
+                <dd> <p><strong>C1-C1 :</strong> Cadrer les projets afin de les engager sur des bases claires et partagées
+                par les parties prenantes<br> en utilisant des repères méthodologiques avérés</p></dd>
+              <dd></dl>
+              <div class="row justify-content-md-center">
+    <div class="col-md-8 col-md-offset-8">
+              <li>Par defaut la liste indique le Degré 1.</li>
+            </ul></dd>
+              </dl>
+              </div>
+</div>
+<br>
+    <div class="row justify-content-md-center">
+      <div class=".col-md-">
+        <form action="{% url 'step1_C1' %}" method="post" class="form-group">
+        <div class="d-flex justify-content-center">
+        {%csrf_token %}
+        <div style="display: none;">{{ form.created_by }}</div>
+        <p style="border: 2px solid blueviolet; width : 810px;">{{ form.C1_C1 }}</p></div>
+        <div class="d-flex justify-content-center"><button type="submit" class="fr-btn">Suivant</button></div>
+        </form>
+        </div>
+      </div>
+  </div>
+        <div class="container-fluid">
+            <div class="row justify-content-md-center">
+                <div class="col-md-8 col-md-offset-8">
+              <ul class="list-group">
+                <li class="list-group-item list-group-item-info"><p><strong>Degré 1 : </strong>Je connais la démarche de projet (cadrer, conduire, évaluer et conclure) et les outils associés.<br>
+Je repère :<br>
+-	les points clés du cahier des charges du système client.<br>
+-	les parties prenantes à l’interne et à l’externe en lien avec le projet.
+
+                  </p></li>
+                  <li class="list-group-item list-group-item-info"><p><strong>Degré 2 : </strong>Je participe à l’élaboration d’un projet dans toutes ses composantes (faisabilité technique, financière et opérationnelle) dans un collectif de travail.<br>
+Je contribue aux travaux préparatoires d’un projet à présenter aux parties prenantes.
+
+                    </p></li>
+                    <li class="list-group-item list-group-item-info"><p><strong>Degré 3 : </strong>Je pilote des projets à l’échelle de ma structure :<br>
+-	Je produis un cahier des charges.<br>
+-	Je définis des indicateurs permettant de suivre et d’évaluer le projet.<br>
+-	Je rédige une note de cadrage.<br>
+-	Je définis la méthodologie et les outils de gestion de projet.<br>
+-	J’anime les réunions de présentation du projet et j’accompagne les parties prenantes dans l’appropriation du projet.
+
+                      </p></li>
+                    <li class="list-group-item list-group-item-info"><p><strong>Degré 4 :</strong> Je pilote des projets complexes d’envergure académique, nationale sur des secteurs particuliers ou avec des exigences spécifiques.<br>
+Je développe de nouveaux outils pour améliorer la gestion de projet.<br>
+Je suis un acteur ressource pour le réseau en capacité d’aider au montage de projets complexes.
+
+                      </p></li>
+              </ul>
+          </div>
+            </div>
+        </div>
+        </div>
+
+{% endblock %}

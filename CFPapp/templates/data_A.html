@@ -1,0 +1,207 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Data A page{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+    <br>
+        <h4>Réponses référentiel enregistrées</h4>
+        <br>
+<div class="row">
+      <div class="col">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Résultats pôle A</h5>
+        <div class="table-responsive">
+            <table  class="table table-bordered">
+     <thead class="table-primary">
+         <tr>
+             <th scope="col"><p style="font-size: 14px;align:center">Réponses A1_C1</p></th>
+             <th scope="col"><p style="font-size: 14px;align:center">Réponses A1_C2</p></th>
+             <th scope="col"><p style="font-size: 14px;align:center">Réponses A1_C3</p></th>
+             <th scope="col"><p style="font-size: 14px;align:center">Réponses A2_C1</p></th>
+             <th scope="col"><p style="font-size: 14px;align:center">Réponses A2_C2</p></th>
+             <th scope="col"><p style="font-size: 14px;align:center">Réponses A2_C3</p></th>
+             <th scope="col"><p style="font-size: 14px;align:center">Réponses A3_C1</p></th>
+             <th scope="col"><p style="font-size: 14px;align:center">Réponses A3_C2</p></th>
+             <th scope="col"><p style="font-size: 14px;align:center">Réponses A3_C3</p></th>
+
+         </tr>
+     </thead>
+     <tbody style="height:100px;overflow-y:auto;width: 100%;">
+
+         <tr>
+
+                 <td>{{ result_stat1 }}</td>
+                 <td>{{ result_stat2 }}</td>
+                 <td>{{ result_stat3 }}</td>
+                 <td>{{ result_stat4 }}</td>
+                 <td>{{ result_stat5 }}</td>
+                 <td>{{ result_stat6 }}</td>
+                 <td>{{ result_stat7 }}</td>
+                 <td>{{ result_stat8 }}</td>
+                 <td>{{ result_stat9 }}</td>
+
+         </tr>
+
+         </tbody>
+         </table>
+           <button type="submit" class="fr-btn"><p><a href="{% url 'statistic' %}" target="_blank" style="color:white">Statistiques</a></p></button>
+      </div>
+    </div>
+  </div>
+  </div>
+  </div>
+  <br>
+
+<div class="row">
+      <div class="col">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Résultats pôle A</h5>
+        <div class="table-responsive">
+            <table  class="table table-bordered">
+     <thead class="table-primary">
+     <tr>
+
+         <th scope="col"><p style="font-size: 14px;align:center">Réponses A4_C1</p></th>
+         <th scope="col"><p style="font-size: 14px;align:center">Réponses A4_C2</p></th>
+         <th scope="col"><p style="font-size: 14px;align:center">Réponses A4_C3</p></th>
+         <th scope="col"><p style="font-size: 14px;align:center">Réponses A5_C1</p></th>
+         <th scope="col"><p style="font-size: 14px;align:center">Réponses A5_C2</p></th>
+         <th scope="col"><p style="font-size: 14px;align:center">Réponses A5_C3</p></th>
+         <th scope="col"><p style="font-size: 14px;align:center">Réponses A6_C1</p></th>
+         <th scope="col"><p style="font-size: 14px;align:center">Réponses A6_C2</p></th>
+         <th scope="col"><p style="font-size: 14px;align:center">Réponses A6_C3</p></th>
+     </tr>
+ </thead>
+ <tbody style="height:100px;overflow-y:auto;width: 100%;">
+
+     <tr>
+             <td>{{ result_stat10 }}</td>
+             <td>{{ result_stat11 }}</td>
+             <td>{{ result_stat12 }}</td>
+             <td>{{ result_stat13 }}</td>
+             <td>{{ result_stat14 }}</td>
+             <td>{{ result_stat15 }}</td>
+             <td>{{ result_stat16 }}</td>
+             <td>{{ result_stat17 }}</td>
+             <td>{{ result_stat18 }}</td>
+     </tr>
+
+     </tbody>
+     </table>
+     <button type="submit" class="fr-btn"><p><a href="{% url 'statistic' %}" target="_blank" style="color:white">Statistiques</a></p></button>
+
+ </div>
+ </div>
+ </div>
+
+</div>
+</div>
+<br>
+<div class="row">
+      <div class="col">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Résultats pôle B</h5>
+        <div class="table-responsive">
+            <table  class="table table-bordered">
+     <thead class="table-warning">
+<tr>
+
+    <th scope="col"><p style="font-size: 14px;align:center">Réponses B1_C1</p></th>
+    <th scope="col"><p style="font-size: 14px;align:center">Réponses B1_C2</p></th>
+    <th scope="col"><p style="font-size: 14px;align:center">Réponses B1_C3</p></th>
+    <th scope="col"><p style="font-size: 14px;align:center">Réponses B2_C1</p></th>
+    <th scope="col"><p style="font-size: 14px;align:center">Réponses B2_C2</p></th>
+    <th scope="col"><p style="font-size: 14px;align:center">Réponses B2_C3</p></th>
+    <th scope="col"><p style="font-size: 14px;align:center">Réponses B3_C1</p></th>
+    <th scope="col"><p style="font-size: 14px;align:center">Réponses B3_C2</p></th>
+    <th scope="col"><p style="font-size: 14px;align:center">Réponses B3_C3</p></th>
+    <th scope="col"><p style="font-size: 14px;align:center">Réponses B4_C1</p></th>
+    <th scope="col"><p style="font-size: 14px;align:center">Réponses B4_C2</p></th>
+    <th scope="col"><p style="font-size: 14px;align:center">Réponses B4_C3</p></th>
+</tr>
+</thead>
+<tbody style="height:100px;overflow-y:auto;width: 100%;">
+
+    <tr>
+
+            <td>{{ result_statB1 }}</td>
+            <td>{{ result_statB2 }}</td>
+            <td>{{ result_statB3 }}</td>
+            <td>{{ result_statB4 }}</td>
+            <td>{{ result_statB5 }}</td>
+            <td>{{ result_statB6 }}</td>
+            <td>{{ result_statB7 }}</td>
+            <td>{{ result_statB8 }}</td>
+            <td>{{ result_statB9 }}</td>
+            <td>{{ result_statB10 }}</td>
+            <td>{{ result_statB11 }}</td>
+            <td>{{ result_statB12 }}</td>
+
+    </tr>
+
+    </tbody>
+    </table>
+     <button type="submit" class="fr-btn"><p><a href="{% url 'statistic' %}" target="_blank" style="color:white">Statistiques</a></p></button>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+<br>
+    <div class="row">
+      <div class="col">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Résultats pôle C</h5>
+        <div class="table-responsive">
+            <table  class="table table-bordered">
+     <thead class="table-success">
+     <tr>
+
+         <th scope="col"><p style="font-size: 14px;align:center">Réponses C1_C1</p></th>
+         <th scope="col"><p style="font-size: 14px;align:center">Réponses C1_C2</p></th>
+         <th scope="col"><p style="font-size: 14px;align:center">Réponsess C1_C3</p></th>
+         <th scope="col"><p style="font-size: 14px;align:center">Réponses C2_C1</p></th>
+         <th scope="col"><p style="font-size: 14px;align:center">Réponses C2_C2</p></th>
+         <th scope="col"><p style="font-size: 14px;align:center">Réponses C2_C3</p></th>
+         <th scope="col"><p style="font-size: 14px;align:center">Réponses C3_C1</p></th>
+         <th scope="col"><p style="font-size: 14px;align:center">Réponses C3_C2</p></th>
+         <th scope="col"><p style="font-size: 14px;align:center">Réponses C3_C3</p></th>
+         <th scope="col"><p style="font-size: 14px;align:center">Réponses C4_C1</p></th>
+         <th scope="col"><p style="font-size: 14px;align:center">Réponses C4_C2</p></th>
+         <th scope="col"><p style="font-size: 14px;align:center">Réponses C4_C3</p></th>
+     </tr>
+     </thead>
+     <tbody style="height:100px;overflow-y:auto;width: 100%;">
+
+         <tr>
+
+                 <td>{{ result_statC1 }}</td>
+                 <td>{{ result_statC2 }}</td>
+                 <td>{{ result_statC3 }}</td>
+                 <td>{{ result_statC4 }}</td>
+                 <td>{{ result_statC5 }}</td>
+                 <td>{{ result_statC6 }}</td>
+                 <td>{{ result_statC7 }}</td>
+                 <td>{{ result_statC8 }}</td>
+                 <td>{{ result_statC9 }}</td>
+                 <td>{{ result_statC10 }}</td>
+                 <td>{{ result_statC11 }}</td>
+                 <td>{{ result_statC12 }}</td>
+
+         </tr>
+
+         </tbody>
+         </table>
+          <button type="submit" class="fr-btn"><p><a href="{% url 'statistic' %}" target="_blank" style="color:white">Statistiques</a></p></button>
+         </div>
+         </div>
+         </div>
+         </div>
+         </div>
+
+{% endblock %}

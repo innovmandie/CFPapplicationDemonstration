@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block title %}Question B4 C2{% endblock %}
+
+{% block content %}
+<div class="row justify-content-md-center">
+      <div class=".col-md-">
+      <dl class="dl-horizontal">
+                <dt><h6 class= 'text-center'>B4 : Formalisation d’offres de prestation</h6></dt>
+                <div class="container" style="margin-left:10%">
+                <dd> <p><strong>B4-C2 :</strong> Formaliser l'offre de prestation afin de convaincre le lecteur en étant attentif aux éléments potentiellement<br>
+                contractuels et à la valorisation des savoir-faire de l’organisation</p></dd>
+              <dd>
+              </dl>
+      </div>
+  <div class="row justify-content-md-center">
+         <div class=".col-md-">
+             <form action="{% url 'step2_B4' %}" method="post" class="form-group">
+                  <div class="d-flex justify-content-center">
+              {%csrf_token %}
+              <div style="display: none;">{{ form.created_by }}</div><br>
+              <p style="border: 2px solid blueviolet; width : 810px;">{{ form.B4_C2 }}</p></div>
+              <div class="d-flex justify-content-center"><button type="submit" class="fr-btn">Suivant</button></div>
+            </form>
+            </div>
+      </div>
+  </div>
+        <div class="container">
+            <div class="row justify-content-md-center">
+            <div class="col-md-8 col-md-offset-8">
+              <ul class="list-group">
+                <li class="list-group-item list-group-item-info"><p><strong>Degré 1 : </strong> J’identifie les savoir-faire de ma structure, du réseau pour valoriser l’offre de prestation à formaliser.
+                  </p></li>
+                  <li class="list-group-item list-group-item-info"><p><strong>Degré 2 : </strong>Je repère les éléments à valoriser pour la rédaction de l’offre.<br>
+Je mobilise les services supports pour rendre mon offre de prestation plus attractive.<br>
+Je contribue dans un collectif à la formalisation de l’offre de prestation.
+</p></li>
+                  <li class="list-group-item list-group-item-info"><p><strong>Degré 3 : </strong>Je maitrise les techniques rédactionnelles pour rendre l’offre de prestation lisible et attractive.<br>
+Je pilote un collectif de travail pour formaliser l’offre de prestation. Je réalise une lecture croisée et critique afin de valider l’offre finale.
+
+                  </p></li>
+                  <li class="list-group-item list-group-item-info"><p><strong>Degré 4 : </strong>J’organise et j’anime un comité de lecture pour valider l’attractivité de l’offre au regard des exigences.<br>
+Je suis force de proposition pour améliorer l’attractivité des offres de prestation de ma structure, du réseau.
+
+                  </p></li>
+              </ul>
+        </div>
+    </div>
+</div>
+</div>
+
+{% endblock %}

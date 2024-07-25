@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Users view page{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+    <h4>Les informations utilisateurs</h4>
+
+    {% for x in Utilisateur_liste %}
+    {{ x }}
+    {% endfor %}
+</div>
+
+
+  {% endblock %}
+

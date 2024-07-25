@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Statistiques page{% endblock %}
+
+{% block content %}
+<div class="container-fluid" style="margin-left : 10px">
+    <br>
+        <div class="card">
+        <div class="card-header">
+            <h6>Pôle A statistiques : A1 A3 </h6>
+        </div>
+        <div class="card-body">
+           {{ chart_A1_A3|safe }}
+        </div>
+      </div>
+   <br>
+   <div class="card">
+        <div class="card-header">
+            <h6>Pôle A statistiques : A4 A6</h6>
+        </div>
+        <div class="card-body">
+          {{ chart_A4_A6|safe }}
+        </div>
+      </div>
+   <br><br>
+   <button type="submit" class="fr-btn"><p><a href="{% url 'export_A_to_excel' %}" target="_blank" style="color:white">Exporter A au format excel</a></p></button>
+    <br>
+   <div class="card">
+        <div class="card-header">
+            <h6>Pôle B statistiques</h6>
+        </div>
+        <div class="card-body">
+          {{ chart_B1_B4|safe }}
+        </div>
+      </div>
+       <br>
+   <button type="submit" class="fr-btn"><p><a href="{% url 'export_B_to_excel' %}" target="_blank" style="color:white">Exporter B au format excel</a></p></button>
+   <br><br>
+   <br>
+
+      <div class="card">
+        <div class="card-header">
+            <h6>Pôle C statistiques</h6>
+        </div>
+        <div class="card-body">
+          {{ chart_C1_C4|safe }}
+        </div>
+      </div>
+   <br>
+    <button type="submit" class="fr-btn"><p><a href="{% url 'export_C_to_excel' %}" target="_blank" style="color:white">Exporter C au format excel</a></p></button>
+   <br><br>
+
+
+
+    <h4>CFP annee</h4>
+{{ chart_bar|safe }}
+
+
+<h4>Distribution des fonctions</h4>
+
+{{ plot_fonction|safe }}
+
+
+</div>
+{% endblock %}
+

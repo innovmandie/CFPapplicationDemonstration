@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% block title %}Question A4 C1{% endblock %}
+
+{% block content %}
+
+
+    <div class="row justify-content-md-center">
+      <div class=".col-md-">
+            <h4 class= 'text-center'style="font-weight: bold;">Pôle A : Conseiller-Développer</h4>
+      <dl class="dl-horizontal">
+                <dt><h6 class= 'text-center'>A1 : Veille socio-économique, réglementaire,<br>
+                concurrentielle et commerciale</h6></dt>
+                <div class="container" style="margin-left:10%">
+                <dd> <p><strong>A1-C1 :</strong> Définir une stratégie de veille afin de collecter des données actuelles et prospectives utiles
+              au positionnement<br> et au développement de l’organisation en s’inscrivant dans les dispositions internes prises par l’organisation</p>
+              <ul class="list-group">
+              <li>Par defaut la liste indique le Degré 1.</li>
+            </ul></div>
+              <dl> <div class="col-md-8 col-md-offset-8">
+            </dd>
+              </dl>
+        <form action="{% url 'step1_A1' %}" method="post" class="form-group">
+        <div class="d-flex justify-content-center">
+        {%csrf_token %}
+        <div style="display: none;">{{ form.created_by }}</div>
+        <p style="border: 2px solid blueviolet; width : 810px;">{{ form.A1_C1 }}</p></div>
+        <div class="d-flex justify-content-center"><button type="submit" class="fr-btn">Suivant</button></div>
+        </form>
+        </div>
+      </div>
+  </div>
+        <div class="container-fluid">
+            <div class="row justify-content-md-center">
+                <div class="col-md-8 col-md-offset-8">
+              <ul class="list-group">
+                <li class="list-group-item list-group-item-info"><p><strong>Degré 1 : </strong>Je connais mon environnement proche de travail (antenne, agglomération, bassin d’emploi), les projets, les activités et l’organisation de ma structure, les outils de veille
+                mobilisés par ma structure, les principaux acteurs et organisations internes et externes détenteurs des data.<br>
+J’identifie :<br>
+-	les instances et les acteurs qui utilisent la veille dans ma structure et au niveau académique.<br>
+-	le système de veille (collecte des informations, traitement, diffusion) adopté par le réseau académique et ma structure.<br>
+-	le périmètre de la veille que j’ai à mener, mes axes de surveillance et mes finalités, les types de données que je dois collecter, les sources formelles et informelles à exploiter.
+
+                  </p></li>
+                  <li class="list-group-item list-group-item-info"><p><strong>Degré 2 : </strong>Je participe aux instances de ma structure chargées de définir la stratégie de veille.<br>
+                  Je me documente sur les données actualisées de la formation professionnelle.<br>
+                  Je me forme aux outils et aux techniques de veille prospective.
+                    </p></li>
+                    <li class="list-group-item list-group-item-info"><p><strong>Degré 3 : </strong>Je suis force de proposition pour mettre en place une stratégie de veille au service du
+                    développement de ma structure et du réseau.<br>J’alimente l’outil de veille partagé pour le collectif de CFP, voire pour d’autres acteurs<br>internes à ma structure ou pour le réseau académique.
+                       </p></li>
+                    <li class="list-group-item list-group-item-info"><p><strong>Degré 4 :</strong> Je contribue à l’organisation du système de veille dans les phases de collecte, traitement
+                    et diffusion. Je suis membre de la cellule de veille et prospective académique. Je transforme une méthodologie de veille en une stratégie prospective.
+                      </p></li>
+              </ul>
+          </div>
+
+
+            </div>
+        </div>
+</div>
+
+{% endblock %}

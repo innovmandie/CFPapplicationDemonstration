@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block title %}Question B3 C1{% endblock %}
+{% block content %}
+ <div class="row justify-content-md-center">
+      <div class=".col-md-">
+            <h4 class= 'text-center'style="font-weight: bold;">Pôle B : CONCEVOIR – INNOVER</h4>
+      <dl class="dl-horizontal">
+                <dt><h6 class= 'text-center'>B3 : Conception de dispositifs de développement de compétences<br>et d’accompagnement de parcours</h6></dt>
+                <div class="container" style="margin-left:10%">
+                <dd><p><strong>B3-C1 :</strong> Organiser le travail de conception afin de s’inscrire dans un calendrier <br>
+                de remise de l’offre en veillant à mobiliser les compétences et les ressources utiles et nécessaires</p>
+              <ul class="list-group">
+              <li>Par defaut la liste indique le Degré 1.</li>
+              </ul></div>
+              <dl> <div class="col-md-8 col-md-offset-8">
+            </dd>
+              </dl>
+        <form action="{% url 'step1_B3' %}" method="post" class="form-group">
+        <div class="d-flex justify-content-center">
+        {%csrf_token %}
+        <div style="display: none;">{{ form.created_by }}</div>
+        <p style="border: 2px solid blueviolet; width : 800px;">{{ form.B3_C1 }}</p></div>
+        <div class="d-flex justify-content-center"><button type="submit" class="fr-btn">Suivant</button></div>
+        </form>
+        </div>
+      </div>
+  </div>
+        <div class="container-fluid">
+            <div class="row justify-content-md-center">
+                <div class="col-md-8 col-md-offset-8">
+              <ul class="list-group">
+                <li class="list-group-item list-group-item-info"><p><strong>Degré 1 : </strong>A partir de la demande client, je prends connaissance des ressources (référentiels, contenus …) utiles et nécessaires à l’offre à concevoir.<br>
+Je repère les domaines de compétences des acteurs internes et externes. J’identifie les services ressources académiques.
+</p></li>
+                  <li class="list-group-item list-group-item-info"><p><strong>Degré 2 : </strong>A partir de la demande client, je participe à une réunion avec les acteurs<br>
+                  internes et/ou externes pour organiser le travail de conception (planning, repérage des compétences, outils, méthodes, etc…)
+                    <li class="list-group-item list-group-item-info"><p><strong>Degré 3 : </strong>Je planifie et je coordonne le travail de conception avec les acteurs concernés
+                    (rôle de chacun, échéances, choix des outils de travail collaboratif, …)<br>Je suis garant du respect du rétro planning.
+</p></li>
+                    <li class="list-group-item list-group-item-info"><p><strong>Degré 4 :</strong> Je suis acteur ressource du réseau pour prendre en charge l’organisation d’un travail de conception d’une réponse au niveau régional ou national ou dans le cadre d’un groupement partenarial.</p></li>
+              </ul>
+          </div>
+
+
+            </div>
+        </div>
+</div>
+
+{% endblock %}

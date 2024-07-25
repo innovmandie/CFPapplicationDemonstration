@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% block title %}Question B3 C1{% endblock %}
+{% block content %}
+<div class="container-fluid" style="margin-left:17px">
+    <br>
+  <h4 class= 'text-center'style="font-weight: bold;">Pôle C : PILOTER – ANIMER</h4>
+      <dl class="dl-horizontal">
+                <dt><h6 class= 'text-center'>C3 : Animation de démarches partenariales</h6></dt>
+                <dd> <p class= 'text-center'><strong>C3-C1 :</strong> Identifier sur le territoire des partenaires potentiels afin d’apporter des réponses concertées à des problématiques
+                ne pouvant<br>efficacement être traitées seul par l’organisation en mobilisant sa connaissance élargie de l’écosystème de la formation professionnelle</p></dd>
+              <dd></dl>
+              <div class="row justify-content-md-center">
+    <div class="col-md-8 col-md-offset-8">
+            <ul class="list-group">
+              <li>Par defaut la liste indique le Degré 1.</li>
+            </ul></dd>
+              </dl>
+              </div>
+</div>
+<br>
+    <div class="row justify-content-md-center">
+      <div class=".col-md-">
+        <form action="{% url 'step1_C3' %}" method="post" class="form-group">
+        <div class="d-flex justify-content-center">
+        {%csrf_token %}
+        <div style="display: none;">{{ form.created_by }}</div>
+        <p style="border: 2px solid blueviolet; width : 810px;">{{ form.C3_C1 }}</p></div>
+        <div class="d-flex justify-content-center"><button type="submit" class="fr-btn">Suivant</button></div>
+        </form>
+        </div>
+      </div>
+  </div>
+        <div class="container-fluid">
+            <div class="row justify-content-md-center">
+                <div class="col-md-8 col-md-offset-8">
+              <ul class="list-group">
+                <li class="list-group-item list-group-item-info"><p><strong>Degré 1 : </strong>J’identifie les partenaires potentiels de mon territoire : concurrents, prescripteurs, OPCO, certificateurs, entreprises, collectivités territoriales, …<br>
+
+Je connais l’historique partenarial de ma structure, du réseau.
+                  </p></li>
+                  <li class="list-group-item list-group-item-info"><p><strong>Degré 2 : </strong>Je rencontre les partenaires de mon territoire pour me présenter et partager nos offres de service respectives.<br>
+
+Je recense les opportunités de partenariats de mon territoire.
+                    </p></li>
+                    <li class="list-group-item list-group-item-info"><p><strong>Degré 3 : </strong>J’active mon réseau pour répondre aux problématiques du territoire. J’identifie les complémentarités pour un projet nécessitant une réponse partenariale.<br>
+
+Je rencontre les partenaires pour partager des constats sur les besoins de territoire et envisager les opportunités d’une réponse commune.
+</p></li>
+                    <li class="list-group-item list-group-item-info"><p><strong>Degré 4 : </strong>
+Je valorise les complémentarités pour un projet d’envergure régionale, nationale nécessitant une réponse partenariale.<br>
+
+Je suis un interlocuteur repéré au niveau régional, national pour détecter les partenaires potentiels à partir de mon réseau professionnel.
+                      </p></li>
+              </ul>
+          </div>
+            </div>
+        </div>
+        </div>
+{% endblock %}

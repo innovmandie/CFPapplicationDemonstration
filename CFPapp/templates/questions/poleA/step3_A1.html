@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% block title %}Question A3 C1{% endblock %}
+
+{% block content %}
+<div class="container-fluid" style="margin-left:17px">
+    <br>
+<div class="row justify-content-md-center">
+      <dl class="dl-horizontal">
+                <dt><h6 class= 'text-center'>A1 : Veille socio-économique, réglementaire, concurrentielle et commerciale</h6></dt>
+                <dd> <p class= 'text-center'><strong>A1-C3 :</strong> Exploiter les données collectées afin d’étayer les positions prises et les conseils<br>
+                apportés en mettant en exergue les informations clés</p></dd>
+              <dd></dl>
+
+</div>
+<br>
+    <div class="row justify-content-md-center">
+      <div class=".col-md-">
+        <form action="{% url 'step3_A1' %}"  method="post" class="form-group">
+        <div class="d-flex justify-content-center">
+        {%csrf_token %}
+        <div style="display: none;">{{ form.created_by }}</div>
+        <p style="border: 2px solid blueviolet; width : 810px;">{{ form.A1_C3 }}</p></div>
+        <div class="d-flex justify-content-center"><button type="submit" class="fr-btn">Enregistrement</button></div>
+        </form>
+        </div>
+      </div>
+  </div>
+        <div class="container-fluid">
+        <div class="row justify-content-md-center">
+            <div class="col-md-8 col-md-offset-8">
+          <ul class="list-group">
+            <li class="list-group-item list-group-item-info"><p><strong>Degré 1 : </strong>Je consulte les outils et les acteurs ressources au regard de mes besoins et de mes missions.<br>
+                Je prends connaissance des relevés de conclusion des données collectés.
+                </p>
+            </li>
+            <li class="list-group-item list-group-item-info">
+              <p><strong>Degré 2 : </strong>Je recherche l’information utile dans le système d’informations.<br>
+Je classe et j’organise les données collectées en fonction de mes priorités et de la stratégie de ma structure et du réseau.<br>
+Je synthétise la veille et j’élabore différents livrables de veille avec les informations clés.
+
+            </li>
+            <li class="list-group-item list-group-item-info">
+              <p><strong>Degré 3 : </strong>Je contextualise les données recensées en fonction de l’organisation de mon environnement professionnel interne et de l’environnement économique et concurrentiel externe.<br>
+J’analyse la veille reçue (analyse des évolutions économiques, technologiques et sociologiques sectorielles) au regard des dossiers dont j’ai la charge et des missions confiées.<br>
+J’extrais les informations clés, je les hiérarchise pour orienter mon action. Je dégage les potentiels de développement.
+
+                </p>
+            </li>
+            <li class="list-group-item list-group-item-info">
+              <p><strong>Degré 4 : </strong>J’analyse la diversité des informations recueillies afin de comprendre les transformations présentes et futures de l’organisation ou du territoire.<br>
+J’évalue la pertinence des données afin d’engager les remédiations nécessaires à la veille.<br>
+Je partage mes analyses au niveau académique, au sein de ma structure.
+
+              </p>
+            </li>
+          </ul>
+ </div>
+            </div>
+        </div>
+        </div>
+
+{% endblock %}
