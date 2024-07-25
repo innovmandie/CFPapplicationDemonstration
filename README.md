@@ -1,2 +1,2 @@
 # CFPapplicationDemonstration
-Application auto-positionnement  formation professionnelle
+Application auto-positionnement formation professionnelle
