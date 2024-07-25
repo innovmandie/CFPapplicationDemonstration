@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block title %}Page A4{% endblock %}
+{% block content %}
+    <div class="row justify-content-md-center">
+      <div class=".col-md-">
+            <h4 class= 'text-center'style="font-weight: bold;">Pôle A : Conseiller-Développer</h4>
+      <dl class="dl-horizontal">
+                <dt><h6 class= 'text-center'>A4 : Conseil aux décideurs</h6></dt>
+                <div class="container" style="margin-left:10%">
+                <dd><p><strong>A4-C1 :</strong> Identifier les situations requérant une activité de conseil (problématique repérée, demande
+                exprimée), <br>afin de permettre leur traitement, en appréciant leur périmètre, leur urgence, leur sensibilité et leur impact</p>
+              <ul class="list-group">
+              <li>Par defaut la liste indique le Degré 1.</li>
+              </ul></div>
+              <dl> <div class="col-md-8 col-md-offset-8">
+            </dd>
+              </dl>
+             <form action="{% url 'step1_A4' %}" method="post" class="form-group">
+                  <div class="d-flex justify-content-center">
+              {%csrf_token %}
+              <div style="display: none;">{{ form.created_by }}</div><br>
+              <p style="border: 2px solid blueviolet; width : 810px;">{{ form.A4_C1 }}</p></div>
+              <div class="d-flex justify-content-center"><button type="submit" class="fr-btn">Suivant</button></div>
+            </form>
+            </div>
+      </div>
+  </div>
+  <div class="container-fluid">
+            <div class="row justify-content-md-center">
+                <div class="col-md-8 col-md-offset-8">
+              <ul class="list-group">
+                <li class="list-group-item list-group-item-info"><p></p><strong>Degré 1 : </strong>Je connais les décideurs (à partir des organigrammes de l’organisation académique et de ma structure), le circuit décisionnel de ma structure, les instances s’y référant.<br>
+Dans mon périmètre d’action (portefeuille, territoire, …) je repère les situations qui nécessitent une activité de conseil.
+
+                  </p></li>
+                  <li class="list-group-item list-group-item-info"><p><strong>Degré 2 : </strong>J’identifie le décideur concerné au regard de la situation requérant un conseil. Je repère les éléments observables de la situation.<br>
+Je sollicite mon collectif de travail sur la situation<br> que j’ai repérée ou sur une demande exprimée par un des décideurs, pour vérifier le besoin de conseil.
+
+                    </p></li><li class="list-group-item list-group-item-info"><p><strong>Degré 3 : </strong>Je m’empare du besoin de conseil, en caractérisant le périmètre, le degré d’urgence et l’impact pour ma structure, le réseau, avec les outils méthodologiques adaptés.
+                      </p></li>
+                    <li class="list-group-item list-group-item-info"><p><strong>Degré 4 : </strong>J’anticipe des situations qui pourraient être sensibles et impactantes pour le développement de ma structure, du réseau à moyen ou long terme.<br>
+                      J’identifie les situations et les demandes qui pourraient être prises en compte dans le plan de développement de ma structure, du réseau.
+                      </p></li>
+              </ul>
+          </div>
+        </div>
+</div>
+
+{% endblock %}

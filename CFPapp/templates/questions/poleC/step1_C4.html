@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% block title %}Question B4 C1{% endblock %}
+
+{% block content %}
+<div class="container-fluid" style="margin-left:17px">
+    <br>
+  <h4 class= 'text-center'style="font-weight: bold;">Pôle C : PILOTER – ANIMER</h4>
+      <dl class="dl-horizontal">
+                <dt><h6 class= 'text-center'>C4 : Contribution à la démarche qualité</h6></dt>
+                <dd> <p class= 'text-center'><strong>C4-C1 :</strong> Spécifier la démarche qualité de l’organisation afin d’en maîtriser les enjeux et son fonctionnement<br>
+                en s’appropriant l’ensemble des dispositions internes</p></dd>
+              <dd></dl>
+              <div class="row justify-content-md-center">
+    <div class="col-md-8 col-md-offset-8">
+            <ul class="list-group">
+              <li>Par defaut la liste indique le Degré 1.</li>
+            </ul></dd>
+              </dl>
+              </div>
+</div>
+<br>
+    <div class="row justify-content-md-center">
+      <div class=".col-md-">
+        <form action="{% url 'step1_C4' %}" method="post" class="form-group">
+        <div class="d-flex justify-content-center">
+        {%csrf_token %}
+        <div style="display: none;">{{ form.created_by }}</div>
+        <p style="border: 2px solid blueviolet; width : 810px;">{{ form.C4_C1 }}</p></div>
+        <div class="d-flex justify-content-center"><button type="submit" class="fr-btn">Suivant</button></div>
+        </form>
+        </div>
+      </div>
+  </div>
+        <div class="container-fluid">
+            <div class="row justify-content-md-center">
+                <div class="col-md-8 col-md-offset-8">
+              <ul class="list-group">
+                <li class="list-group-item list-group-item-info"><p><strong>Degré 1 : </strong>Je connais :<br>
+-	la règlementation relative aux certifications des organisations qui s’impose à tous les prestataires concourant au développement des compétences (actions de formation continue, par apprentissage, VAE, bilans de compétences).<br>
+-	l’existence de la démarche qualité, les labels ou certifications obtenus par l’organisation.<br>
+                  </p></li>
+                  <li class="list-group-item list-group-item-info"><p><strong>Degré 2 : </strong>J’identifie l’application et le respect des exigences et indicateurs de performance de l’organisation.<br>
+J’ai lu les référentiels EDUFORM et QUALIOPI, j’ai compris leur structure et mesure les conséquences en cas de non-conformité.
+                    </p></li>
+                    <li class="list-group-item list-group-item-info"><p><strong>Degré 3 : </strong>Je peux présenter à mes collaborateurs et à mes partenaires les engagements du label et leur déclinaison au niveau de la structure.
+                      </p></li>
+                    <li class="list-group-item list-group-item-info"><p><strong>Degré 4 :</strong> Je conseille sur l’évolution de la politique qualité mise en place au niveau de ma structure, au niveau du réseau académique.
+Je suis un acteur ressource pour le réseau en capacité d’informer sur les évolutions réglementaires des certifications qualité et leur mise en œuvre dans l’organisation.
+
+                      </p></li>
+              </ul>
+          </div>
+            </div>
+        </div>
+        </div>
+
+{% endblock %}

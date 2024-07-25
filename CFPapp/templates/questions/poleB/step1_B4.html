@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block title %}Question B4 C1{% endblock %}
+{% block content %}
+ <div class="row justify-content-md-center">
+      <div class=".col-md-">
+            <h4 class= 'text-center'style="font-weight: bold;">Pôle B : CONCEVOIR – INNOVER</h4>
+      <dl class="dl-horizontal">
+                <dt><h6 class= 'text-center'>B4 : Formalisation d’offres de prestation</h6></dt>
+                <div class="container" style="margin-left:10%">
+                <dd><p><strong>B4-C1 :</strong> Identifier ou définir des règles et conditions de présentation de l’offre de prestation afin de répondre<br>
+                aux attentes du client ou commanditaire en respectant les standards professionnels et les exigences réglementaires</p>
+              <ul class="list-group">
+              <li>Par defaut la liste indique le Degré 1.</li>
+              </ul></div>
+              <dl> <div class="col-md-8 col-md-offset-8">
+            </dd>
+              </dl>
+        <form action="{% url 'step1_B4' %}" method="post" class="form-group">
+        <div class="d-flex justify-content-center">
+        {%csrf_token %}
+        <div style="display: none;">{{ form.created_by }}</div>
+        <p style="border: 2px solid blueviolet; width : 800px;">{{ form.B4_C1 }}</p></div>
+        <div class="d-flex justify-content-center"><button type="submit" class="fr-btn">Suivant</button></div>
+        </form>
+        </div>
+      </div>
+  </div>
+        <div class="container-fluid">
+            <div class="row justify-content-md-center">
+                <div class="col-md-8 col-md-offset-8">
+              <ul class="list-group">
+                <li class="list-group-item list-group-item-info"><p><strong>Degré 1 : </strong>Je connais :<br>
+-	les trames de réponse du client ou du commanditaire.<br>
+-	le cadre d’une réponse avec l’existence des règles et des conditions pour présenter l’offre de prestation (nature de l’action, prix, contrat pédagogique, niveau de certification, etc…).<br>
+-	les standards professionnels d’une offre de prestation en lien avec la démarche qualité.<br>
+</p></li>
+                  <li class="list-group-item list-group-item-info"><p><strong>Degré 2 : </strong>Je contribue à définir les règles et conditions de présentation d’une offre de prestation.</p></li>
+                    <li class="list-group-item list-group-item-info"><p><strong>Degré 3 : </strong>J’intègre les standards et les exigences réglementaires de présentation de l’offre de prestation que je propose au client ou au commanditaire.
+</p></li>
+                    <li class="list-group-item list-group-item-info"><p><strong>Degré 4 :</strong> Je suis un acteur ressource du réseau en capacité de valider la conformité du respect des règles et conditions de présentation d’une offre de prestation.</p></li>
+              </ul>
+          </div>
+
+
+            </div>
+        </div>
+</div>
+
+{% endblock %}

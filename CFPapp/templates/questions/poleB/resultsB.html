@@ -1,0 +1,241 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Data B page{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+
+    <br>
+    <h4>Réponses enregistrées</h4>
+     <div class="row">
+         <div class="col-sm">
+             <button type="submit" class="fr-btn"><h6><a href="{% url 'generateB_pdf' %}" target="_blank" style="color:white">Créer un PDF</a></h6></button>
+         </div>
+         </div>
+           <div class="row">
+        <div class="col-md.">
+             <ul>
+            <li><strong>Degré 1 : </strong>Sensibilisation</li>
+            <li><strong>Degré 2 : </strong>Appropriation</li>
+            <li><strong>Degré 3 : </strong>Maitrise</li>
+            <li><strong>Degré 4 : </strong>Expertise</li>
+            <li><strong>Degré 0 : </strong>Ne se prononce pas</li>
+        </ul>
+            </div>
+    </div>
+     <div class="row">
+      <div class="col-sm-6">
+        <div class="card text-center">
+          <div class="card-header">
+            <h6>Résultats B1 : </h6><p>Veille pédagogique et techno-pédagogique</p>
+          </div>
+          <div class="card-body">
+             {% if resultsB1 %}
+             <div class="table-responsive">
+                  <table  class="table table-bordered table-hover">
+        <thead class="table-warning">
+            <tr>
+                <th scope="col">B1_C1</th>
+                <th scope="col">B1_C2</th>
+                <th scope="col">B1_C3</th>
+                 <th scope="col">Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in resultsB1 %}
+            <tr>
+                    <td>{{ row.B1_C1 }}</td>
+                    <td>{{ row.B1_C2 }}</td>
+                    <td>{{ row.B1_C3 }}</td>
+                    <td>{{ row.time }}</td>
+            </tr>
+            </tbody>
+            </table>
+             </div>
+            {% endfor %}
+                <div class="d-flex justify-content-center">
+
+                            {{ chart_B1 | safe }}
+
+                    </div>
+
+        {% else %}
+        <p>Aucun resultats pour l'instant</p>
+        {% endif %}
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="card text-center">
+          <div class="card-header">
+            <h6>Résultats B2 :</h6><p>Analyse de demandes</p>
+          </div>
+          <div class="card-body">
+           {% if resultsB2 %}
+           <div class="table-responsive">
+               <table  class="table table-bordered table-hover">
+        <thead class="table-warning">
+            <tr>
+                <th scope="col">B2_C1</th>
+                <th scope="col">B2_C2</th>
+                <th scope="col">B2_C3</th>
+                 <th scope="col">Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in resultsB2 %}
+            <tr>
+
+                    <td>{{ row.B2_C1 }}</td>
+                    <td>{{ row.B2_C2 }}</td>
+                    <td>{{ row.B2_C3 }}</td>
+                    <td>{{ row.time }}</td>
+            </tr>
+            </tbody>
+            </table>
+           </div>
+            {% endfor %}
+                  <div class="d-flex justify-content-center">
+
+                           {{ chart_B2 | safe}}
+                    </div>
+
+             {% else %}
+        <p>Aucun resultats pour l'instant</p>
+        {% endif %}
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+</br></br>
+         <div class="row">
+      <div class="col-sm-6">
+        <div class="card text-center">
+          <div class="card-header">
+            <h6>Résultats B3 : </h6><p>Conception de dispositifs de développement<br>
+        de compétences et d'accompagnement de parcours</p>
+          </div>
+          <div class="card-body">
+              {% if resultsB3 %}
+             <div class="table-responsive">
+                   <table  class="table table-bordered table-hover">
+        <thead class="table-warning">
+            <tr>
+                <th scope="col">B3_C1</th>
+                <th scope="col">B3_C2</th>
+                <th scope="col">B3_C3</th>
+                 <th scope="col">Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in resultsB3 %}
+            <tr>
+                    <td>{{ row.B3_C1 }}</td>
+                    <td>{{ row.B3_C2 }}</td>
+                    <td>{{ row.B3_C3 }}</td>
+                    <td>{{ row.time }}</td>
+            </tr>
+            </tbody>
+            </table>
+      </div>
+      {% endfor %}
+             <div class="d-flex justify-content-center">
+                  {{ chart_B3 | safe}}
+             </div>
+
+        {% else %}
+        <p>Aucun resultats pour l'instant</p>
+        {% endif %}
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="card text-center">
+          <div class="card-header">
+            <h6>Résultats B4 :</h6><p>Formalisation d’offres de prestation</p>
+
+          </div>
+          {% if resultsB4 %}
+          <div class="card-body">
+
+           <div class="table-responsive">
+              <table  class="table table-bordered table-hover">
+        <thead class="table-warning">
+            <tr>
+                <th scope="col">B4_C1</th>
+                <th scope="col">B4_C2</th>
+                <th scope="col">B4_C3</th>
+                 <th scope="col">Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in resultsB4 %}
+            <tr>
+                    <td>{{ row.B4_C1 }}</td>
+                    <td>{{ row.B4_C2 }}</td>
+                    <td>{{ row.B4_C3 }}</td>
+                    <td>{{ row.time }}</td>
+            </tr>
+            </tbody>
+            </table>
+           </div>
+            {% endfor %}
+            <div class="d-flex justify-content-center">
+                {{ chart_B4 | safe}}
+            </div>
+
+             {% else %}
+        <p>Aucun resultats pour l'instant</p>
+        {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+</br></br>
+     <div class="row">
+      <div class="col-sm-6">
+        <div class="card text-center">
+          <div class="card-header">
+            Toutes les réponses du pôle B
+          </div>
+          <div class="card-body">
+            <p class="card-text">Vue d'ensemble</p>
+            <div class="d-flex justify-content-center">
+                 {{ chart_all | safe}}
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="card text-center">
+          <div class="card-header">
+            Toutes les réponses du pôle B
+          </div>
+          <div class="card-body">
+            <p class="card-text">Vue comparée</p>
+            {{ chart_all2 | safe}}
+
+            <br>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="card text-center">
+          <div class="card-header">
+            Toutes les résultats
+          </div>
+          <div class="card-body">
+            {{ chart_stat | safe}}
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+</div>
+
+{% endblock %}

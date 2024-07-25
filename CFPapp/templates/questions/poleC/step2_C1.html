@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% block title %}Question B1 C2{% endblock %}
+
+{% block content %}
+
+
+<div class="container-fluid" style="margin-left:17px">
+    <br>
+<div class="row justify-content-md-center">
+      <dl class="dl-horizontal">
+                <dt><h6 class= 'text-center'>C1 : Management de projets</h6></dt>
+                <dd> <p class= 'text-center'><strong>C1-C2 :</strong> Estimer les moyens disponibles et nécessaires afin de maîtriser la faisabilité<br>
+                et la mise en œuvre des projets en mobilisant les acteurs compétents</p></dd>
+              <dd></dl>
+
+</div>
+<br>
+    <div class="row justify-content-md-center">
+      <div class=".col-md-">
+        <form action="{% url 'step2_C1' %}" method="post" class="form-group">
+        <div class="d-flex justify-content-center">
+        {%csrf_token %}
+        <div style="display: none;">{{ form.created_by }}</div>
+        <p style="border: 2px solid blueviolet; width : 810px;">{{ form.C1_C2 }}</p></div>
+        <div class="d-flex justify-content-center"><button type="submit" class="fr-btn">Suivant</button></div>
+        </form>
+        </div>
+      </div>
+  </div>
+        <div class="container-fluid">
+            <div class="row justify-content-md-center">
+                <div class="col-md-8 col-md-offset-8">
+              <ul class="list-group">
+                <li class="list-group-item list-group-item-info"><p><strong>Degré 1 : </strong>Je connais les acteurs et les moyens existants de mon organisation (plateaux techniques, offre de formation de l’éducation nationale sur mon territoire…).<br>
+Je connais les partenaires externes mobilisables.
+
+                  </p></li>
+                  <li class="list-group-item list-group-item-info"><p><strong>Degré 2 : </strong>Je repère les acteurs de mon organisation et les partenaires externes mobilisables pour le projet à partir de l’étude de faisabilité du projet.
+                    </p></li>
+                    <li class="list-group-item list-group-item-info"><p><strong>Degré 3 : </strong>J’estime les moyens humains, matériels, financiers et techniques nécessaires au projet et je m’assure de leur disponibilité.<br>
+Je propose des solutions si possibles innovantes, pour rendre le projet viable.<br>
+Je sollicite les acteurs experts de ma structure et du réseau académique (inspecteurs…).<br>
+Je construis une annexe financière du projet en mobilisant le(s) financement(s) approprié(s).
+
+                      </p></li>
+                    <li class="list-group-item list-group-item-info"><p><strong>Degré 4 : </strong>Je suis un acteur ressource pour ma structure, le réseau académique en capacité
+                    d’estimer les moyens disponibles et nécessaires d’un projet d’envergure régionale, nationale, européenne, d’un projet impliquant des partenaires.
+                      </p></li>
+              </ul>
+          </div>
+            </div>
+        </div>
+        </div>
+
+
+{% endblock %}

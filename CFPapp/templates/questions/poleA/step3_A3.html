@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block title %}Question A3 C3{% endblock %}
+{% block content %}
+    <div class="row justify-content-md-center">
+      <div class=".col-md-">
+      <dl class="dl-horizontal">
+            <dt><h6 class= 'text-center'>A3 : Contribution à la définition de la politique de l'organisation</h6></dt>
+            <div class="container" style="margin-left:10%">
+        <br>
+        <dd><p><strong>A3-C3 :</strong> Participer à des instances de concertation afin d’échanger sur les orientations possibles ou souhaitables<br>
+        en faisant valoir ses analyses et positions</p></dd>
+             <form action="{% url 'step3_A3' %}" method="post" class="form-v5-content">
+              {%csrf_token %}
+              <div style="display: none;">{{ form.created_by }}</div>
+        <p style="border: 2px solid blueviolet; width : 810px;">{{ form.A3_C3}}</p><br>
+        <div class="d-flex justify-content-center"><button type="submit" class="fr-btn">Enregistrer</button></div><br>
+        </form>
+        </div>
+      </div>
+  </div>
+        <div class="container-fluid">
+            <div class="row justify-content-md-center">
+                <div class="col-md-8 col-md-offset-8">
+          <ul class="list-group" style="font-size: 17px;">
+            <li class="list-group-item list-group-item-info"><p><strong>Degré 1 : </strong>Je prends connaissance des comptes-rendus des différentes instances.<br>
+Je connais le fonctionnement et le rôle des acteurs des instances de concertation de ma structure auxquelles je participe. Je connais la posture et les contributions attendues du CFP dans ces instances.
+
+                </p>
+            </li>
+            <li class="list-group-item list-group-item-info">
+              <p><strong>Degré 2 : </strong>Je participe aux instances de concertation et je contribue aux échanges en apportant des éléments d’analyse à soumettre au collectif.
+              </p>
+            </li>
+            <li class="list-group-item list-group-item-info">
+              <p><strong>Degré 3 : </strong>Je contribue à l’ordre du jour des instances de concertation.<br>
+                Dans les instances de concertation, je présente des orientations argumentées, possibles ou souhaitables, à l’aide d’outils d’analyse et d’indicateurs objectifs.
+                </p>
+            </li>
+            <li class="list-group-item list-group-item-info">
+              <pS><strong>Degré 4 : </strong>Dans les instances de concertation à l’interne, je suis consulté sur des orientations précises par rapport à mon champ d’expertise.<br>
+                Je représente ma structure, le réseau académique dans des instances de concertation à l’externe.
+              </p>
+            </li>
+          </ul>
+        </div>
+      </div>
+          </div>
+        </div>
+        {% endblock %}

@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% block title %}Question C2 C2{% endblock %}
+
+{% block content %}
+
+<div class="container-fluid" style="margin-left:17px">
+    <br>
+<div class="row justify-content-md-center">
+      <dl class="dl-horizontal">
+                <dt><h6 class= 'text-center'>C2 : Animation de collectifs de travail</h6></dt>
+                <dd> <p class= 'text-center'><strong>C2-C2 :</strong> Utiliser des techniques d’animation ou de management variées et adaptées afin de faciliter l’engagement<br>
+                dans l’action en privilégiant des approches coopératives</p></dd>
+              <dd></dl>
+
+</div>
+<br>
+    <div class="row justify-content-md-center">
+      <div class=".col-md-">
+        <form action="{% url 'step2_C2' %}" method="post" class="form-group">
+        <div class="d-flex justify-content-center">
+        {%csrf_token %}
+        <div style="display: none;">{{ form.created_by }}</div>
+        <p style="border: 2px solid blueviolet; width : 810px;">{{ form.C2_C2 }}</p></div>
+        <div class="d-flex justify-content-center"><button type="submit" class="fr-btn">Suivant</button></div>
+        </form>
+        </div>
+      </div>
+  </div>
+        <div class="container-fluid">
+            <div class="row justify-content-md-center">
+                <div class="col-md-8 col-md-offset-8">
+              <ul class="list-group">
+                <li class="list-group-item list-group-item-info"><p><strong>Degré 1 : </strong>Je me familiarise aux techniques et aux outils d’animation et de management variés.<br>
+Je choisis les techniques et les outils pour favoriser le travail collectif et les coopérations en fonction du projet et des équipes
+
+                  </p></li>
+                  <li class="list-group-item list-group-item-info"><p><strong>Degré 2 : </strong>J’applique les techniques d’animation facilitant l’engagement coopératif des équipes.<br>
+Je pratique : écoute active, valorisation, échange, partage, co-développement…
+
+                    </p></li>
+                    <li class="list-group-item list-group-item-info"><p><strong>Degré 3 : </strong>J’utilise les techniques de management en adoptant une posture bienveillante dans un lien fonctionnel, pour garantir l’engagement de l’équipe dans la durée et la réussite du projet<br>
+J’identifie et je gère les réactions courantes, les tensions face au changement.<br>
+J’analyse et je comprends le fonctionnement de l’équipe. J’adapte mes techniques d’animation en fonction de la nature du projet, des contraintes, des équipes et de mon environnement.
+
+                      </p></li>
+                    <li class="list-group-item list-group-item-info"><p><strong>Degré 4 :</strong> J’évalue les méthodes et techniques mises en œuvre et propose des améliorations.<br>
+Je suis un acteur ressource en capacité de transmettre des méthodes, des techniques d’animation et de management efficaces.<br> Je conseille des pilotes de projet sur l’animation d’un collectif.
+
+                      </p></li>
+              </ul>
+          </div>
+            </div>
+        </div>
+        </div>
+
+{% endblock %}

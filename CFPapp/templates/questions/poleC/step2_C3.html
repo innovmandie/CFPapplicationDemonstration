@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% block title %}Question C2 C3{% endblock %}
+
+{% block content %}
+
+<div class="container-fluid" style="margin-left:17px">
+    <br>
+<div class="row justify-content-md-center">
+      <dl class="dl-horizontal">
+                <dt><h6 class= 'text-center'>C2 : Animation de démarches partenariales</h6></dt>
+                <dd> <p class= 'text-center'><strong>C3-C2 :</strong> Construire des partenariats afin de proposer des solutions innovantes en formalisant<br>
+                les contributions et engagements réciproques</p></dd>
+              <dd></dl>
+
+</div>
+<br>
+    <div class="row justify-content-md-center">
+      <div class=".col-md-">
+        <form action="{% url 'step2_C3' %}" method="post" class="form-group">
+        <div class="d-flex justify-content-center">
+        {%csrf_token %}
+        <div style="display: none;">{{ form.created_by }}</div>
+        <p style="border: 2px solid blueviolet; width : 810px;">{{ form.C3_C2 }}</p></div>
+        <div class="d-flex justify-content-center"><button type="submit" class="fr-btn">Suivant</button></div>
+        </form>
+        </div>
+      </div>
+  </div>
+        <div class="container-fluid">
+            <div class="row justify-content-md-center">
+                <div class="col-md-8 col-md-offset-8">
+              <ul class="list-group">
+                <li class="list-group-item list-group-item-info"><p><strong>Degré 1 : </strong>Je connais :<br>
+-	les différentes formes juridiques des partenariats (consortium, groupement solidaire, cotraitance, sous-traitance...).<br>
+-	les projets mis en œuvre dans ma structure, dans le réseau qui ont fait l’objet d’un partenariat et je connais les documents contractuels existants.
+
+                  </p></li>
+                  <li class="list-group-item list-group-item-info"><p><strong>Degré 2 : </strong>Je participe à un premier temps d’échanges sur l’objet du partenariat à construire.<br>
+Je valorise les champs d’expertise de ma structure, de mon réseau et j’intègre ceux des partenaires.<br>
+Je fournis les éléments utiles à la rédaction des supports contractuels d’un projet partenarial.
+
+                    </p></li>
+                    <li class="list-group-item list-group-item-info"><p><strong>Degré 3 : </strong>Je participe à la détection des complémentarités et des économies d’échelle que je présente aux décideurs de ma structure, du réseau.<br>
+En accord avec les décideurs de ma structure, du réseau, je négocie avec les partenaires les composantes techniques et pédagogiques du partenariat.<br>
+Je rédige ou je corédige les documents contractuels du partenariat.
+
+
+                      </p></li>
+                    <li class="list-group-item list-group-item-info"><p><strong>Degré 4 : </strong>Sur sollicitation du DRAFPIC, je propose des accords de groupement de consortium pour un AMI, un AAP et je rédige les documents contractuels afférents.<br>
+Je suis un interlocuteur repéré au niveau de ma structure, du réseau pour la construction de nouveaux partenariats d’envergure régionale, nationale et européenne.
+
+                      </p></li>
+              </ul>
+          </div>
+            </div>
+        </div>
+        </div>
+
+{% endblock %}
