@@ -14,7 +14,7 @@ python -m venv /path/to/new/virtual/environment
 <br>
 https://docs.python.org/fr/3/library/venv.html
 
-then :
+then :<br>
 pip install -r requirements.txt
 
 Go to folder and use it
