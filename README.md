@@ -4,7 +4,8 @@ Application auto-positionnement formation professionnelle
 This application is a survey to make a self evaluation of your skills and knowledge about
 the organisation of professional trainning.
 <hr>
-## Installation
+
+<h1>Installation</h1>
 
 Create a folder an a python virtuel environment.
 
