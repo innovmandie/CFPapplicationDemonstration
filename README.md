@@ -1,6 +1,8 @@
 # CFPapplicationDemonstration
 Application d'auto-positionnement pour la formation professionnelle
 <br>
+Git clone the repository
+<br>
 <h4>It's a Django application</h4>
 This application is a survey to make a self evaluation of your skills and knowledge about
 the organisation of professional trainning.
