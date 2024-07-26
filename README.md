@@ -11,6 +11,7 @@ The survey help you to build radar charts of your skills
 Create a folder and a python virtual environment.
 
 python -m venv /path/to/new/virtual/environment
+<br>
 https://docs.python.org/fr/3/library/venv.html
 
 then :
