@@ -10,9 +10,11 @@ The survey help you to build radar charts of your skills
 
 <h1>Installation</h1>
 
-Create a folder and a python virtual environment.
+Create a folder<br>
 <br>
 Git clone the repository
+<br>
+Create a python virtual environment.
 <br>
 python -m venv /path/to/new/virtual/environment
 <br>
