@@ -3,7 +3,7 @@ Application auto-positionnement formation professionnelle
 ##It's a Django application
 This application is a survey to make a self evaluation of your skills and knowledge about
 the organisation of professional trainning.
-The survey help you to buil radar charts of your skills
+The survey help you to build radar charts of your skills
 <hr>
 
 <h1>Installation</h1>
