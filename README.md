@@ -1,6 +1,7 @@
 # CFPapplicationDemonstration
 Application auto-positionnement formation professionnelle
-##It's a Django application
+<br>
+<h4>It's a Django application</h4>
 This application is a survey to make a self evaluation of your skills and knowledge about
 the organisation of professional trainning.
 The survey help you to build radar charts of your skills
