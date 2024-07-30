@@ -24,3 +24,12 @@ then :<br>
 pip install -r requirements.txt
 
 Go to folder and use it
+
+from the console :
+
+python manage.py runserver
+
+there an admin part with statistics of users
+and a user part with survey and radar charts
+
+this can be use for your organization, your self positionning
