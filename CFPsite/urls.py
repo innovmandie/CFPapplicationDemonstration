@@ -22,8 +22,6 @@ from CFPapp import urls
 urlpatterns = [
     path("admin/", admin.site.urls),
     path('', include('CFPapp.urls')),
-    path("select2/", include("django_select2.urls")),
-    
 ]
 
 # handling the 404 error
